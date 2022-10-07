@@ -12,7 +12,7 @@ output_file = "./result.txt"
 freq = 44400
  
 # Recording duration in seconds
-duration = 5
+duration = 20
 
 recording = sd.rec(int(duration * freq),
                    samplerate = freq, channels = 2)
@@ -31,3 +31,5 @@ result = model.transcribe(wav_file)
 
 with open(output_file, 'w') as f:
     f.write(result["text"])
+
+print(result["text"])
